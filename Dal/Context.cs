@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
-using WorkWithEFCoreApp.Entities;
+using Dal.Entities;
 
-namespace WorkWithEFCoreApp
+namespace Dal
 {
     public class Context : DbContext
     {

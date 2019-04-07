@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WorkWithEFCoreApp.Entities
+namespace Dal.Entities
 {
     public class User
     {
