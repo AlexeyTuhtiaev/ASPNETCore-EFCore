@@ -1,18 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Web.Models;
+using Dal;
+using Dal.Entities;
 
 namespace Web.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IRepo _repo;
+
+        public HomeController(IRepo repo)
+        {
+            _repo = repo;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            IEnumerable<User> users = _repo.GetAll();
+            return View(users.ToList());
         }
 
         public IActionResult About()

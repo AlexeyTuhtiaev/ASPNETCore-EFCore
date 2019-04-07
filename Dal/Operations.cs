@@ -6,9 +6,11 @@ using Dal.Entities;
 
 namespace Dal
 {
-   static class Operations
+    public class UserRepo : IRepo
     {
-        public static void Create(User user)
+        private Context _db = new Context();
+
+        public void Create(User user)
         {
             using (Context db = new Context())
             {
@@ -17,7 +19,7 @@ namespace Dal
             }
         }
 
-        public static void Update(User user)
+        public void Update(User user)
         {
             using (Context db = new Context())
             {
@@ -26,7 +28,7 @@ namespace Dal
             }
         }
 
-        public static void Delete(User user)
+        public void Delete(User user)
         {
             using (Context db = new Context())
             {
@@ -34,15 +36,12 @@ namespace Dal
                 db.SaveChanges();
             }
         }
-        public static IEnumerable<User> GetAll()
+        public IEnumerable<User> GetAll()
         {
-            using (Context db = new Context())
-            {
-                return db.Users;
-            }
+            return _db.Users;
         }
 
-        public static User GetUser(int id)
+        public User GetUser(int id)
         {
             using (Context db = new Context())
             {
