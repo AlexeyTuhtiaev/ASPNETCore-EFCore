@@ -1,9 +1,0 @@
-{
-   "scripts": {
-      "preinstall": "npm list bower -g || npm install bower -g",
-      "postinstall": "bower cache clean",
-      "start": "Program.cs"
-   },
-   "dependencies": {
-   }
-}
